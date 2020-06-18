@@ -3,6 +3,7 @@
 Typesafe operations on tuples.
 
 [![Build Status](https://cloud.drone.io/api/badges/andyglow/scala-tuples/status.svg)](https://cloud.drone.io/andyglow/scala-tuples)
+[![codecov](https://codecov.io/gh/andyglow/scala-tuples/branch/master/graph/badge.svg)](https://codecov.io/gh/andyglow/scala-tuples)
 
 - [x] prepend value `"abc" +: (1, false) == ("abc", 1, false)`
 - [x] append value `(1, false) :+ "abc" == (1, false, "abc")`
