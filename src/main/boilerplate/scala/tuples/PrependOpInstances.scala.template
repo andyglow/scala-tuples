@@ -1,0 +1,20 @@
+package scala.tuples
+
+import StructuralTupleOps.PrependOp
+
+private[tuples] abstract class PrependOpInstances {
+  import PrependOp._
+
+  implicit def prepend0[T1]: Aux[T1, Unit, Tuple1[T1]] =
+    new PrependOp[T1, Unit] {
+      type Out = Tuple1[T1]
+      def apply(prefix: T1, suffix: Unit): Tuple1[T1] = Tuple1(prefix)
+    }
+
+  [1..21#implicit def prepend1[F, [#T1#]]: Aux[F, Tuple1[[#T1#]], Tuple2[F, [#T1#]]] =
+    new PrependOp[F, Tuple1[[#T1#]]] {
+      type Out = Tuple2[F, [#T1#]]
+      def apply(prefix: F, suffix: Tuple1[[#T1#]]): Tuple2[F, [#T1#]] = Tuple2(prefix, [#suffix._1#])
+    }#
+  ]
+}

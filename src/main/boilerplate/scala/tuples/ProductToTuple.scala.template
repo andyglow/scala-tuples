@@ -1,0 +1,14 @@
+package scala.tuples
+
+
+private[tuples] object ProductToTuple {
+  def apply[T <: Product](x: T): Product = x match {
+    [1..21#case x: Tuple1[[#_#]] => x#
+    ]
+    case x => x.productArity match {
+      case 0 => x
+      [1..21#case 1 => Tuple1([#x.productElement(1)#])#
+      ]
+    }
+  }
+}

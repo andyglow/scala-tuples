@@ -1,0 +1,20 @@
+package scala.tuples
+
+import StructuralTupleOps.AppendOp
+
+private[tuples] abstract class AppendOpInstances {
+  import AppendOp._
+
+  implicit def append0[T1]: Aux[Unit, T1, Tuple1[T1]] =
+    new AppendOp[Unit, T1] {
+      type Out = Tuple1[T1]
+      def apply(prefix: Unit, suffix: T1): Tuple1[T1] = Tuple1(suffix)
+    }
+
+  [1..21#implicit def append1[[#T1#], L]: Aux[Tuple1[[#T1#]], L, Tuple2[[#T1#], L]] =
+    new AppendOp[Tuple1[[#T1#]], L] {
+      type Out = Tuple2[[#T1#], L]
+      def apply(prefix: Tuple1[[#T1#]], suffix: L): Tuple2[[#T1#], L] = Tuple2([#prefix._1#], suffix)
+    }#
+  ]
+}
