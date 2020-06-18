@@ -32,7 +32,6 @@ private[tuples] trait LowPriorityToTuple extends LowestPriorityToTuple {
 }
 
 private[tuples] trait LowestPriorityToTuple {
-  import ToTuple._
 
 //  implicit def anyToTuple1[T]: Aux[T, Tuple1[T]] = new ToTuple[T] {
 //    override type Out = Tuple1[T]

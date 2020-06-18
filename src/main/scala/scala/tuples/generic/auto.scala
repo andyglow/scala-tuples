@@ -1,8 +1,6 @@
 package scala.tuples.generic
 
 import scala.tuples._
-import scala.tuples.ToTuple._
-import scala.tuples.FromTuple._
 
 
 object auto {

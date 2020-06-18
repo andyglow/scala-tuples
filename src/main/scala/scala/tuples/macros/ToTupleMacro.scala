@@ -2,7 +2,6 @@ package scala.tuples.macros
 
 import scala.reflect.macros.blackbox
 import scala.tuples._
-import scala.tuples.ToTuple._
 
 
 class ToTupleMacro(val c: blackbox.Context) extends Extractors with HasContext with HasLog {

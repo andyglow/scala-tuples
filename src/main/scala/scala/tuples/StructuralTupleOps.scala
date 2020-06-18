@@ -1,6 +1,5 @@
 package scala.tuples
 
-import scala.language.implicitConversions
 
 class StructuralTupleOps[T] private[tuples] (val tuple: T) extends AnyVal {
   import StructuralTupleOps._

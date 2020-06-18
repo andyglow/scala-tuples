@@ -2,7 +2,6 @@ package scala.tuples.macros
 
 import scala.reflect.macros.blackbox
 import scala.tuples._
-import scala.tuples.FromTuple._
 
 
 class FromTupleMacro(val c: blackbox.Context) extends Extractors with HasContext with HasLog {
@@ -22,7 +21,7 @@ class FromTupleMacro(val c: blackbox.Context) extends Extractors with HasContext
     c.Expr[DerivedFrom[TT, T]](q"DerivedFrom[$ttpe, $tpe]($tree)")
   }
 
-  def impl[TT, T](implicit tt: c.WeakTypeTag[TT], t: c.WeakTypeTag[T]): c.Expr[FromTuple.Aux[TT, T]] = {
+  def impl[TT, T](implicit t: c.WeakTypeTag[T]): c.Expr[FromTuple.Aux[TT, T]] = {
     val tpe = t.tpe
 
     val tree = tpe match {

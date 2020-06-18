@@ -45,6 +45,9 @@ scalacOptions ++= {
       case "-Ywarn-unused-import" => "-Ywarn-unused:imports,-patvars,-privates,-locals,-params,-implicits"
       case other                  => other
     }
+    case Some((2, minor)) if minor >= 13 =>
+      val non213 = Set("-Xfuture", "-Yno-adapted-args")
+      options.filterNot(non213.apply)
     case _             => options
   }
 }
